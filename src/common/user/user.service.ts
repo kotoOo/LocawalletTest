@@ -19,10 +19,7 @@ export class UserService {
     if (!a.length) return null;
 
     var user = a[0];
-    if (!user.token) {
-      const randomstring = require("randomstring");
-      user.token = new UserToken(randomstring.generate());
-    }
+    if (!user.token) user.token = this.userTokenService.newToken();
 
     return user.token;
   }

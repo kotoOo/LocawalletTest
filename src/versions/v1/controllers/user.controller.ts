@@ -13,12 +13,14 @@ export class UserController {
   login(@Body() user: User, @Res() res: Response) {
     const userToken = this.userService.userToken(user.email, user.password);
     if (userToken) {
-      res.status(200).json({token: userToken.token});
+      if (res) res.status(200).json({token: userToken.token});
+      return true;
     } else { 
-      res.status(401).json({
+      if (res) res.status(401).json({
         statusCode: 401,
         error: "Unauthorized"
       });
+      return false;
     }
   }
 }
