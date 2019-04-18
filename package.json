@@ -16,13 +16,16 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:noverbose": "jest --watch --verbose false"
   },
   "dependencies": {
     "@nestjs/common": "^5.4.0",
     "@nestjs/core": "^5.4.0",
     "@nestjs/microservices": "^5.4.0",
     "@nestjs/websockets": "^5.4.0",
+    "class-transformer": "^0.2.0",
+    "form-data": "^2.3.3",
     "randomstring": "^1.1.5",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.3",
